@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 🌍 COVID-19 & Demographic Insights Dashboard
+# #  COVID-19 & Demographic Insights Dashboard
 # 
 # Welcome to this interactive Jupyter Notebook presenting a series of visual dashboards and data analyses based on the latest available COVID-19 and population datasets. The notebook combines statistical insights and interactive visualizations built using **Plotly** and **Dash** to explore global health and demographic trends.
 # 
-# ## 📌 What you'll find inside:
+# ##  What you'll find inside:
 # 
 # - **COVID-19 Map – Positive Cases per Capita**  
 #   An interactive map showing the number of positive COVID-19 cases per capita across different continents and countries.
@@ -26,11 +26,8 @@
 #   A scatter plot examining the link between a country’s population size and its average life expectancy.
 # 
 # ---
-# Let's dive in! 🔎
-# 
-
-# In[ ]:
-
+# Let's dive in! 
+#
 
 get_ipython().system('pip install --upgrade plotly')
 get_ipython().system('pip install --upgrade seaborn')
@@ -48,26 +45,12 @@ from dash import html
 from dash.dependencies import Input, Output
 
 
-# In[ ]:
 
-
-from google.colab import drive
-drive.mount('/content/drive')
-
-
-# In[ ]:
-
-
-df = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/project_1_python.csv')
-
-
-# In[ ]:
+df = pd.read_csv("Covid 19 Data.csv")
 
 
 df.head()
 
-
-# In[ ]:
 
 
 top_10_countries = df.groupby('location')['population'].max().nlargest(10)
@@ -76,7 +59,6 @@ top_10_countries
 
 # ## Global Population Rankings – Top 10 Countries
 
-# In[ ]:
 
 
 plt.figure(figsize=(12, 6))
@@ -95,7 +77,6 @@ plt.show()
 
 # ## Correlation Between Population and Life Expectancy
 
-# In[ ]:
 
 
 fig = px.scatter(df,
@@ -112,7 +93,6 @@ fig.show()
 
 # ## Comparative COVID-19 Dashboard: CZ vs. SK
 
-# In[ ]:
 
 
 # Filtered data for Czech Republic and Slovakia
@@ -133,7 +113,6 @@ fig.show()
 
 # ## COVID-19 – Cases per Capita (Map View)
 
-# In[60]:
 
 
 import plotly.express as px
@@ -164,9 +143,8 @@ cases_map.show()
 
 
 # ## Dashboard – Cumulative Number of Positive Cases in Selected Country
-# 
 
-# In[61]:
+
 
 
 df['date'] = pd.to_datetime(df['date'])
@@ -217,9 +195,8 @@ app.run(mode='inline')
 
 
 # ## Dashboard – Total Cases, Deaths, Tests, Vaccinations, and Vaccinated People
-# 
 
-# In[67]:
+
 
 
 data = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/project_1_python.csv')
@@ -304,7 +281,6 @@ if __name__ == '__main__':
 # ## COVID-19 Vaccination Leaders – Total vs. Per Capita
 # 
 
-# In[69]:
 
 
 data = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/project_1_python.csv')
