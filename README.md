@@ -6,7 +6,7 @@ This project provides an exploratory data analysis of COVID-19 case and vaccinat
 
 - `Covid_19_Tracker.ipynb` – Jupyter Notebook containing full analysis, visualizations, and dashboards.
 - `Final Report_ COVID-19 & Demographic Data Analysis.pdf` – Final written summary of key findings, insights, and recommendations.
-- `Covid 19 Data.csv` – Source dataset (not included here, assumed from Our World In Data).
+- `Covid 19 Data.csv` – Source dataset.
 
 ##  Data Description
 
